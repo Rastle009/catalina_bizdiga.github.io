@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Управление товарами</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .category {
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: #a8e6a1;
+      border-radius: 5px;
+    }
+    .button-container {
+      display: flex;
+      gap: 10px;
+      margin-top: 5px;
+    }
+    .edit-button {
+      background-color: orange;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .edit-button:hover {
+      background-color: darkorange;
+    }
+    .delete-button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .delete-button:hover {
+      background-color: darkred;
+    }
+    input {
+      margin: 5px;
+      padding: 5px;
+    }
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+    }
+    .language-buttons {
+      margin-bottom: 20px;
+    }
+    .language-button {
+      margin-right: 10px;
+      padding: 5px 10px;
+      cursor: pointer;
+      background-color: #ddd;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+<h1>Управление товарами</h1>
+
+<div>
+  <button class="language-button" onclick="switchLanguage('ru')">Русский</button>
+  <button class="language-button" onclick="switchLanguage('en')">English</button>
+  <button class="language-button" onclick="switchLanguage('md')">Молдавский</button>
+</div>
+
+<div class="category">
+  <h2>GoCon</h2>
+  <ul id="gocon-items"></ul>
+  <div class="form-container" id="gocon-form">
+    <input type="text" id="gocon-name" placeholder="Название товара">
+    <input type="number" id="gocon-price" placeholder="Цена товара">
+    <input type="text" id="gocon-quantity" placeholder="Количество товара (например, 10+5)">
+    <button id="add-item-button" onclick="addItem()">Добавить товар</button>
+  </div>
+</div>
+
+<h2 id="saved-items-title">Сохранённые товары:</h2>
+<ul id="saved-items"></ul>
+<button id="delete-all-button" onclick="deleteAllItems()">Удалить все товары</button>
+<h3 id="total-sum-title">Общая сумма: <span id="total-sum">0</span> MDL.</h3>
+
+<script src="script.js"></script>
+</body>
+</html>
